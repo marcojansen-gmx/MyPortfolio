@@ -1,0 +1,143 @@
+   .footer {
+    margin: auto;
+    max-width: 800px;
+    text-align: center;
+    color: #fff;
+   }
+    
+    a {
+      color: #fff;
+    }
+  
+  .footer {
+    margin-top: 30px;
+  }
+
+  @import "compass/css3";
+
+body { background: url('http://farm5.staticflickr.com/4098/4813867870_70d0f479a7.jpg'); }
+
+
+.view {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  float: left;
+  position: relative;
+  border: 8px solid #fff;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  background: #333;
+  perspective: 500px;
+}
+  
+  img {
+  	position: absolute;
+    z-index: 0;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .s2, .s3, .s4, .s5 { transform: translateX(60px); }
+  .s1, .s2, .s3, .s4, .s5 {
+    background-position-y: -60px;
+  }
+  .s1 { background-position-x: -120px; }
+	.s2 { background-position-x: -180px; }
+  .s3 { background-position-x: -240px; }
+  .s4 { background-position-x: -300px; }
+  .s5 { background-position-x: -360px; }
+  
+  .overlay {
+  	width: 60px;
+    height: 100%;
+ 		opacity: 0;
+    position: absolute;
+    transition: opacity 150ms ease-in-out;
+  }
+  
+  .overlay:hover { opacity: 1; }
+
+
+.view div.view-back{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background: #666;
+  z-index: 0;
+}
+  
+  span {
+    position: absolute;
+    left: 80px;
+    bottom: 120px;
+    color: rgba(255,255,255,.4);
+  	text-transform: uppercase;
+    transform: rotate(90deg);
+    z-index: 0;
+  }
+  
+  a {
+    display: bock;
+    font-size: 18px;
+    color: rgba(255,255,255,0.4);
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 31px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;   
+  }
+  
+  	a:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+.view .slice{
+    width: 60px;
+    height: 100%;
+    z-index: 100;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transition: transform 150ms ease-in-out;
+}
+
+
+/* ADD THESE STYLES FOR BROWSERS THAT DON'T SUPPORT 3D CSS 
+.view {
+    overflow: hidden;
+}
+ 
+.view:hover img {
+    left: -85px;
+}
+ 
+.view div.view-back {
+    background: #666;
+}
+*/
+
+/* HALF-FOLDED EFFECT */
+.view:last-of-type {
+	perspective: 1050px;
+}
+  
+  div { transition: all 0.3s ease-in-out; }
+  
+  	/* .s3 {	transform: translate3d(59px,0,0) rotate3d(0,1,0,-55deg); 
+    .s4 { transform: translate3d(59px,0,0) rotate3d(0,1,0,110deg); 
+    .s5 { transform: translate3d(59px,0,0) rotate3d(0,1,0,-110deg); */
+
+  
+	.s2 > .overlay { background: linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%); }
+	.s3 > .overlay { background: linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%); }
+ 	.s4 > .overlay { background: linear-gradient(right, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.2) 100%); }
+  .s5 > .overlay { background: linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%); }
+  
+  div.view-back { background: linear-gradient(left, #0a0a0a 0%,#666666 100%); }
+}
