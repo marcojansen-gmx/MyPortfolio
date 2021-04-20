@@ -130,3 +130,7 @@ p {
     color: teal !important; 
     opacity: 0.3 !important; 
   }
+
+#explain {
+    color: antiquewhite;
+}
