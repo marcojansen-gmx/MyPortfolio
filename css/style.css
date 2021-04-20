@@ -133,3 +133,15 @@ p {
 #explain {
     color: black;
 }
+
+.carousel-caption {
+    background-color: white;
+    border-radius: 5px;
+    opacity: 0.6;
+    
+}
+
+.carousel-caption > h1 {
+    font-weight: 600;
+    color: black;
+}
